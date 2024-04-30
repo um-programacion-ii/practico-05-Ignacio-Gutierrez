@@ -23,7 +23,7 @@ public class AlumnoDao {
         if (alumnos.containsKey(alumno.getId())) {
             alumnos.put(alumno.getId(), alumno);
         } else {
-            System.out.printf("El alumno con id %d no existe\n", alumno.getId());
+            throw new IllegalArgumentException("El alumno con id " + alumno.getId() + " no existe.");
         }
     }
 
