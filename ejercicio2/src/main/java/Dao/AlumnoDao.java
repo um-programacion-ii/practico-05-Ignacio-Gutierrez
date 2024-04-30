@@ -1,3 +1,7 @@
+package Dao;
+
+import Entidades.Alumno;
+
 import java.util.HashMap;
 import java.util.Map;
 

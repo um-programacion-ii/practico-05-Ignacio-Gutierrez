@@ -1,3 +1,6 @@
+import Dao.AlumnoDao;
+import Entidades.Alumno;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
