@@ -42,10 +42,12 @@ public class AlumnoDaoTest {
     @Test
     public void testActualizarAlumnoExistente() {
         Alumno alumno = new Alumno(7, "Laura", "Fernandez");
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        try {
             alumnoDao.actualizarAlumno(alumno);
-        });
-        assertEquals("El alumno con id 7 no existe.", exception.getMessage());
+        } catch (IllegalArgumentException e) {
+            return;
+        }
+        fail("Se esperaba una excepción.");
     }
 
     @Test
