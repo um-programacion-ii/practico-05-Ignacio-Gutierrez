@@ -23,11 +23,15 @@ public class AlumnoDao {
         if (alumnos.containsKey(alumno.getId())) {
             alumnos.put(alumno.getId(), alumno);
         } else {
-            // Manejar el caso de que el alumno no exista
+            System.out.printf("El alumno con id %d no existe\n", alumno.getId());
         }
     }
 
     public void eliminarAlumno(int id) {
         alumnos.remove(id);
+    }
+
+    public Map<Integer, Alumno> getAlumnos() {
+        return alumnos;
     }
 }
