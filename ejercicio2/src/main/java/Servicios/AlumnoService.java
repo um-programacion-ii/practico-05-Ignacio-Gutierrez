@@ -31,4 +31,5 @@ public class AlumnoService {
     public Map<Integer, Alumno> findAllAlumnos() {
         return alumnoDao.findAll();
     }
+
 }

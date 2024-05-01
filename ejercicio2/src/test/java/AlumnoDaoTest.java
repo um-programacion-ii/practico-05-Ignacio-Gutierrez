@@ -22,7 +22,7 @@ public class AlumnoDaoTest {
     }
 
     @Test
-    public void testAdd() {
+    public void testAddAlumno() {
         Alumno alumno = new Alumno(6, "Laura", "Fernandez");
         alumnoDao.add(alumno);
         assertEquals(alumno, alumnoDao.findByAlumnoId(6));
@@ -41,7 +41,7 @@ public class AlumnoDaoTest {
 
 
     @Test
-    public void testUpdateExistente() {
+    public void testUpdateAlumnoNoExistente() {
         Alumno alumno = new Alumno(7, "Laura", "Fernandez");
         try {
             alumnoDao.update(alumno);
@@ -52,7 +52,7 @@ public class AlumnoDaoTest {
     }
 
     @Test
-    public void testUpdateNoExistente() {
+    public void testUpdateAlumnoExistente() {
         Alumno alumno = new Alumno(3, "Lucia", "Martinez");
         alumnoDao.update(alumno);
         assertEquals(alumno, alumnoDao.findByAlumnoId(3));
@@ -62,13 +62,13 @@ public class AlumnoDaoTest {
     @Test
     public void testEliminarAlumnoExistente() {
         alumnoDao.delete(5);
-        assertEquals(null, alumnoDao.findByAlumnoId(5));
+        assertNull(alumnoDao.findByAlumnoId(5));
     }
 
     @Test
     public void testEliminarAlumnoNoExistente() {
         alumnoDao.delete(6);
-        assertEquals(null, alumnoDao.findByAlumnoId(6));
+        assertNull(alumnoDao.findByAlumnoId(6));
     }
 
 
